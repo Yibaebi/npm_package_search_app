@@ -7,7 +7,13 @@ interface RepositoriesState {
   data: string[]
 }
 
-export const repositoriesReducer = (state: RepositoriesState, action: SearchAction) => {
+const initialRepositoriesState = {
+  loading: false,
+  error: null,
+  data: [],
+}
+
+export const repositoriesReducer = (state: RepositoriesState = initialRepositoriesState, action: SearchAction) => {
   switch (action.type) {
     case ActionTypes.SEARCH_REPOSITORIES:
       return { loading: true, error: null, data: [] }

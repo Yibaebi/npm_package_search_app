@@ -1,0 +1,9 @@
+.nps-tag {
+  width: fit-content;
+  padding: 15px;
+  height: 46px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-right: 10px;
+  cursor: pointer;
+}

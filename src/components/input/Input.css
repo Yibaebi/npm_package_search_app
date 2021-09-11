@@ -1,0 +1,16 @@
+/* Search input */
+.nps-input {
+  background: #fafaff;
+  border: 1px solid #b3b8d8;
+  border-radius: 5px;
+  height: 46px;
+  width: 280px;
+  padding-left: 20px;
+  outline: none;
+  margin-right: 8px;
+}
+
+.nps-input::placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}

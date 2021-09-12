@@ -1,14 +1,23 @@
 import React from 'react'
 import './Input.css'
 
-interface InputProps {
-  onChange: () => void
+export interface InputProps {
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   placeHolder: string
   value: string
+  type: React.HTMLInputTypeAttribute
 }
 
-const Input: React.FC<InputProps> = ({ onChange, placeHolder = 'Search a Package...', value }) => {
-  return <input className="nps-input" placeholder={placeHolder} onChange={onChange} value={value} />
+const Input: React.FC<InputProps> = ({ handleInputChange, placeHolder = 'Search a Package...', value, type }) => {
+  return (
+    <input
+      className="nps-input"
+      type={type}
+      placeholder={placeHolder}
+      onChange={e => handleInputChange(e)}
+      value={value}
+    />
+  )
 }
 
 export default Input

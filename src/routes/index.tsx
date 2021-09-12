@@ -8,7 +8,7 @@ const MainRouter = () => {
       <Switch>
         {routeBuilder.map(route => {
           const { component, exact, path, router: ChosenRouter } = route
-          return <ChosenRouter path={path} exact={exact} component={component} />
+          return <ChosenRouter key={path} path={path} exact={exact} component={component} />
         })}
       </Switch>
     </Router>

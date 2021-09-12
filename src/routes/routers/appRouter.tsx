@@ -5,10 +5,12 @@ interface RouteBuilderProps {
   path: string
   exact: boolean
   component: React.FC
+  key: string
 }
 
 export const AppRouter: React.FC<RouteBuilderProps> = ({ path, exact, component, ...rest }) => {
   const Component = component
+
   return (
     <Route
       path={path}

@@ -23,7 +23,8 @@ const Search: React.FC<SearchProps> = ({ page = '' }) => {
 
   useEffect(() => {
     setSearchTerm(packageName)
-    searchRespositories(searchTerm)
+    searchRespositories(packageName)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.currentTarget.value)

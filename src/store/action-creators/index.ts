@@ -11,16 +11,29 @@ export const searchRespositories = (term: string) => async (dispatch: Dispatch<S
 
   try {
     const { data } = await axios.get(`https://registry.npmjs.org/-/v1/search?text=${term}`)
-    const repositoriesNames = data.objects.map((result: any) => result.package.name)
+
+    const repositories = data.objects.map((result: any) => {
+      const packageItem = result.package
+      const npmLink = packageItem.links.npm
+
+      return {
+        title: packageItem.name,
+        description: packageItem.description,
+        repoLink: !packageItem.links.repository ? npmLink : packageItem.links.repository,
+        homepage: !packageItem.links.homepage ? npmLink : packageItem.links.homepage,
+        npmLink,
+        keywords: packageItem.keywords,
+      }
+    })
 
     dispatch({
       type: ActionTypes.SEARCH_REPOSITORIES_SUCCESS,
-      payload: repositoriesNames,
+      payload: repositories,
     })
   } catch (error: any) {
     dispatch({
       type: ActionTypes.SEARCH_REPOSITORIES_ERROR,
-      payload: error.response.message,
+      payload: error?.response?.message,
     })
   }
 }

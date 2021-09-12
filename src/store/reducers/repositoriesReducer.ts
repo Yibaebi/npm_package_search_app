@@ -1,10 +1,18 @@
 import { ActionTypes } from '../action-types'
 import { SearchAction } from '../actions/index'
 
+export interface RepositoryData {
+  name: string
+  description: string
+  repoLink: string
+  homepage: string
+  npmLink: string
+  keywords: string[]
+}
 interface RepositoriesState {
   loading: boolean
   error: string | null
-  data: string[]
+  data: RepositoryData[]
 }
 
 const initialRepositoriesState = {

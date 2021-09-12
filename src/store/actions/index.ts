@@ -1,11 +1,12 @@
 import { ActionTypes } from '../action-types'
+import { RepositoryData } from '../reducers/repositoriesReducer'
 
 export interface SearchRepositoriesAction {
   type: ActionTypes.SEARCH_REPOSITORIES
 }
 export interface SearchRepositoriesSuccessAction {
   type: ActionTypes.SEARCH_REPOSITORIES_SUCCESS
-  payload: string[]
+  payload: RepositoryData[]
 }
 export interface SearchRepositoriesErrorAction {
   type: ActionTypes.SEARCH_REPOSITORIES_ERROR

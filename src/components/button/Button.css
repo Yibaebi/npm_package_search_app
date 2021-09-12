@@ -5,13 +5,28 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 5px 13px;
   width: 120px;
+  height: 46px;
   font-size: 18px;
   cursor: pointer;
   border: 2px solid #b3b8d8;
   transition: all 0.3s ease-in-out;
   font-weight: 600;
+}
+
+.nps-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+.nps-btn:disabled:hover {
+  border: 2px solid #b3b8d8;
+}
+
+.nps-btn.loading,
+.nps-btn.loading:hover {
+  background: #151a46;
 }
 
 .nps-btn svg {

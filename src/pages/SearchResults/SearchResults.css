@@ -1,0 +1,16 @@
+.nps-search-results--page {
+  background-color: #eee;
+  padding: 30px;
+  position: relative;
+}
+
+.sticky-search--bar {
+  position: sticky;
+  top: 0px;
+  padding: 16px;
+  padding-left: 0px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  background-color: #eee;
+  border-bottom: 1px solid #cbcee4;
+}
